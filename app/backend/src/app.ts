@@ -8,8 +8,13 @@ class App {
 
     this.config();
 
-    // Não remover essa rota
-    this.app.get('/', (req, res) => res.json({ ok: true }));
+    this.app.get('/produtos', (req, res) => res.json({ ok: true }));
+    this.app.get('/produtos/find', (req, res) => res.json({ ok: true }));
+    this.app.get('/produtos/:id', (req, res) => res.json({ ok: true }));
+    this.app.post('/produtos', (req, res) => res.json({ ok: true }));
+    this.app.put('/produtos/:id', (req, res) => res.json({ ok: true }));
+    this.app.patch('/produtos/:id', (req, res) => res.json({ ok: true }));
+    this.app.delete('/produtos/:id', (req, res) => res.json({ ok: true }));
   }
 
   private config():void {
