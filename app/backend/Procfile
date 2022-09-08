@@ -1,1 +1,1 @@
-web: node ./backend/build/server
+web: cd backend/ && npx tsc && node ./backend/build/server
