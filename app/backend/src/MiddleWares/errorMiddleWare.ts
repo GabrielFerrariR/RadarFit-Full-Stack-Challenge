@@ -13,9 +13,7 @@ const errorMiddleWare: ErrorRequestHandler = (
 ) => {
   const { code } = err;
   if (code) return res.status(code).json({ message: err.message });
-  if (err.name === 'JsonWebTokenError') {
-    return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Token must be a valid token' });
-  }
+  
   res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: err.message });
 };
 export default errorMiddleWare;

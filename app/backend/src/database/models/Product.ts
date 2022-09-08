@@ -15,13 +15,14 @@ Product.init({
   produto: DataTypes.STRING,
   valor: DataTypes.FLOAT,
   descricao: DataTypes.STRING,
-  created: DataTypes.DATE,
-  updated: DataTypes.DATE
+  createdAt: DataTypes.DATE,
+  updatedAt: DataTypes.DATE
 }, {
   // ... Outras configs
   underscored: true,
   sequelize: db,
   modelName: 'products',
+  timestamps: true,
 });
 
 export default Product;

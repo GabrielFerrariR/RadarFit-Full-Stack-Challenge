@@ -1,6 +1,7 @@
 import { IProduct, IService } from "../interfaces";
 import Products from '../database/models/Product'
 import { Op } from "sequelize";
+import BadRequest from "../errors/BadRequest";
 
 export default class ProductsService implements IService {
   constructor(private model = Products){}
@@ -10,7 +11,7 @@ export default class ProductsService implements IService {
     return data
   }
 
-  async search(q: string): Promise<IProduct[]> {
+  async search(q: unknown){
     const data = await this.model.findAll({
       where: {
         [Op.or]: [{
@@ -27,9 +28,9 @@ export default class ProductsService implements IService {
     return data
   }
 
-  async getById(id: number): Promise<IProduct | null> {
+  async getById(id: number): Promise<IProduct> {
     const data = await this.model.findByPk(id);
-    if (!data) throw new Error('ras')
+    if (!data) throw new BadRequest('Product not found')
     return data
   }
 
@@ -38,7 +39,7 @@ export default class ProductsService implements IService {
     return data.isNewRecord
   }
 
-  async update(id: number, product: Omit<IProduct, "id" | "created" | "updated">): Promise<boolean> {
+  async update(id: number, product: Omit<IProduct, "id" | "created">): Promise<boolean> {
     const data = await this.model.update(product, {
       where: {
         id: id
