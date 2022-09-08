@@ -9,6 +9,11 @@ export const requestData = async (endpoint) => {
   return data;
 };
 
+export const requestQueriedData = async (endpoint, params) => {
+  const { data } = await api.get(endpoint, params);
+  return data;
+};
+
 export const requestPost = async (endpoint, body) => {
   const { data } = await api.post(endpoint, body);
   return data;
