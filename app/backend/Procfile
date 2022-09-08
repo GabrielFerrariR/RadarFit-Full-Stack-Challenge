@@ -1,1 +1,1 @@
-web: cd app/ && node .
+web: cd ./ && node .
