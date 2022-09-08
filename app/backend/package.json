@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "db": "npx sequelize-cli db:create",
-    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+    "db:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "keywords": [],
   "author": "",

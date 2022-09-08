@@ -3,7 +3,7 @@ import AppContext from "../context/AppContext";
 import ProductCard from "./ProductCard";
 
 function ProductList() {
-  const { products} = useContext(AppContext)
+  const { products } = useContext(AppContext)
   return(
     <section>
       {products.map(({ produto, valor, id }) => {
