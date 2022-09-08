@@ -4,6 +4,10 @@
   "description": "Desafio técnico da RadarFit",
   "keywords": [],
   "author": "Gabriel Ferrari",
+  "scripts": {
+    "compose:up": "(cd app && docker-compose up -d --build)",
+    "compose:down": "(cd app && docker-compose down --remove-orphans)"
+  },
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.36.2",
