@@ -15,9 +15,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  width: 600,
+  height: 400,
+  bgcolor: '#f1f2f0',
+  border: '0.5px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -78,8 +79,22 @@ export default function NewProductModal() {
             name='descricao' 
             onChange={ onFormChange }
           />
-          <Button onClick={ addProduct }>Add</Button>
-          <Button onClick={ handleClose }>Fechar</Button>
+          <Button
+            onClick={ addProduct }
+            sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+            variant="contained"
+            color="success"
+          >
+            Add
+          </Button>
+          <Button
+            variant="contained"
+            color="success"
+            onClick={ handleClose }
+            sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+          >
+            Fechar
+          </Button>
         </Box>
       </Modal>
     </div>

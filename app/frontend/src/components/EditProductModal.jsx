@@ -7,16 +7,16 @@ import EditIcon from '@mui/icons-material/Edit';
 import TextField  from '@mui/material/TextField';
 import { requestData, requestUpdate } from '../service/requests';
 import AppContext from '../context/AppContext';
-import Palette from '../theme/Palette';
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  width: 600,
+  height: 400,
+  bgcolor: '#f1f2f0',
+  border: '0.5px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -86,15 +86,22 @@ const { setProducts } = useContext(AppContext);
             maxRows={4}
             onChange={ onFormChange } 
           />
-          <Button
-            variant="contained"
-            color="success"
-            onClick={ editProduct }
-            sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
-          >
-            Editar
-          </Button>
-          <Button onClick={handleClose} >Fechar</Button>
+          <section>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={ editProduct }
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+            >
+              Editar
+            </Button>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={handleClose}
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+            >Fechar</Button>
+          </section>
         </Box>
       </Modal>
     </div>
