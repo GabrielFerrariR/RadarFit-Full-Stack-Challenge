@@ -5,6 +5,7 @@
   "main": "./build/server",
   "scripts": {
     "build": "npx tsc",
+    "start": "node .",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "db": "npx sequelize-cli db:create",
     "db:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
