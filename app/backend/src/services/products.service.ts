@@ -12,6 +12,7 @@ export default class ProductsService implements IService {
   }
 
   async search(q: unknown){
+    if(!q) return  await this.getAll()
     const data = await this.model.findAll({
       where: {
         [Op.or]: [{

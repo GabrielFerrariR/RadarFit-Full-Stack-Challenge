@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
-// import OtherModel from './OtherModel';
 
 class Product extends Model {
   public id!: number;
@@ -14,11 +13,10 @@ class Product extends Model {
 Product.init({
   produto: DataTypes.STRING,
   valor: DataTypes.FLOAT,
-  descricao: DataTypes.STRING,
+  descricao: DataTypes.TEXT,
   createdAt: DataTypes.DATE,
   updatedAt: DataTypes.DATE
 }, {
-  // ... Outras configs
   underscored: true,
   sequelize: db,
   modelName: 'products',

@@ -15,11 +15,11 @@ module.exports = {
       },
       valor: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       descricao: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       created_at: {
       type: Sequelize.DATE,
