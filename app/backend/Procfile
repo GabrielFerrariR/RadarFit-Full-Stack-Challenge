@@ -1,1 +1,1 @@
-web: cd app/backend && node .
+web: node ./build/server
