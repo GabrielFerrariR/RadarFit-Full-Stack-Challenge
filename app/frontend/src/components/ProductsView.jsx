@@ -1,22 +1,25 @@
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ProductDetails from './ProductDetails';
 import ProductList from './ProductList';
 import NewProductModal from './NewProductModal';
+import { Container, Box } from '@mui/system';
+import '../styles/products.css'
 
 function ProductsView() {
   return (
-    <section>
-      <section>
+    <section className='products-container'>
+      <section className='new-product-bar'>
         <h1>Produtos</h1>
         <NewProductModal />
       </section>
-      <section>
-        <h3>Lista de Produtos</h3>
-        <ProductList />
-      </section>
-      <section>
-        <h3>Detalhes</h3>
-        <ProductDetails />
+      <section style={ { display: 'flex', width:'900px', justifyContent:'space-between' } }>
+        <section className='product-list-container'>
+          <h3>Lista de Produtos</h3>
+          <ProductList />
+        </section>
+        <section className='details-container'>
+          <h3>Detalhes</h3>
+          <ProductDetails />
+        </section>
       </section>
     </section>
   );

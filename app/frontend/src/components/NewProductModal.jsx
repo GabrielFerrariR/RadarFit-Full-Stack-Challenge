@@ -42,7 +42,11 @@ export default function NewProductModal() {
 
   return (
     <div>
-      <AddCircleOutlineIcon onClick={handleOpen} />
+      <AddCircleOutlineIcon
+        onClick={handleOpen}
+        fontSize='large'
+        color="success"
+      />
       <Modal
         open={open}
         onClose={handleClose}
@@ -51,7 +55,7 @@ export default function NewProductModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Editar Produto
+            Adicionar Produto
           </Typography>
           <TextField
             id="standard-basic"
@@ -75,7 +79,7 @@ export default function NewProductModal() {
             onChange={ onFormChange }
           />
           <Button onClick={ addProduct }>Add</Button>
-          <Button onClick={handleClose} >Fechar</Button>
+          <Button onClick={ handleClose }>Fechar</Button>
         </Box>
       </Modal>
     </div>

@@ -4,10 +4,10 @@ import SearchBar from './components/SearchBar';
 
 function App() {
   return (
-    <main className="App">
-      <SearchBar />
-      <ProductsView />
-    </main>
+      <main className="App">
+        <SearchBar />
+        <ProductsView />
+      </main>
   );
 }
 

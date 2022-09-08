@@ -1,14 +1,21 @@
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import { useState } from 'react';
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
 function ProductCard(props) {
-  const { products, setProducts } = useContext(AppContext)
+  const [isSelected, setIsSelected] = useState(false)
+  const { setDetailedProduct } = useContext(AppContext);
+  const showDetails = () => {
+    setDetailedProduct(props)
+    setIsSelected(!isSelected)
+  }
+  const classType = (isSelected) ? 'product-card selected-card' : 'product-card';
   return (
-    <section key={ props.key }>
-      <p>{ props.produto }</p>
+    <section key={ props.key } className={ classType } onClick={ showDetails }>
+      <h4>{ props.produto }</h4>
       <p>{ props.valor }</p>
-      <LocalOfferIcon/>
+      <LocalOfferIcon className='local-offer-icon' sx={{ color: isSelected ? "#60aa95" :"#2d3f46" }} />
     </section>
   );
 }

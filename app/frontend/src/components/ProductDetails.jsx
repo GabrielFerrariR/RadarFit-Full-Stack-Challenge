@@ -8,15 +8,15 @@ import EditProductModal from "./EditProductModal";
 function ProductDetails() {
   const { detailedProduct } = useContext(AppContext);
   return (
-    <section>
-      <h1>{ detailedProduct.produto }</h1>
+    <section className="product-details-container">
+      <h2>{ detailedProduct.produto }</h2>
       <p>Valor</p>
-      <p>{ `R$${ detailedProduct.valor }` }</p>
+      <p id='detail-valor' >{ `R$${ detailedProduct.valor }` }</p>
       <p>{ detailedProduct.descricao }</p>
-      <Stack direction="row" spacing={3}>
-        <EditProductModal/>
-        <LocalOfferIcon />
-      </Stack>
+      <section className="detail-btn-container">
+        <EditProductModal prodId={ detailedProduct.id }/>
+        <LocalOfferIcon sx={{color: "#2d3f46"}} />
+      </section>
     </section>
   );
 }

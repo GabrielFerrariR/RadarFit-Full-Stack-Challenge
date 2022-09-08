@@ -3,6 +3,9 @@ import { useContext } from 'react';
 import { useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
 import { requestQueriedData } from '../service/requests';
+import { Stack } from '@mui/material';
+
+
 
 function SearchBar() {
   const { setProducts } = useContext(AppContext)
@@ -13,8 +16,16 @@ function SearchBar() {
   }, [query])
   return(
     <header>
-      <TextField id="filled-basic" label="Buscar por um produto" variant="filled"
-      onChange={ (event) => setQuery( event.target.value)} />
+      <section className='search-container'>
+      <TextField
+        id="filled-basic"
+        label="Buscar por um produto"
+        variant="filled"
+        onChange={ (event) => setQuery( event.target.value)}
+        sx={{ width: '50%' }}
+        className="search-input"
+      />
+      </section>
     </header>
   );
 }
