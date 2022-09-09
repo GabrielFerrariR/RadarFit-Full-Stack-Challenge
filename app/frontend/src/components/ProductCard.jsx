@@ -14,7 +14,7 @@ function ProductCard(props) {
   return (
     <section key={ props.id } className={ classType } onClick={ showDetails }>
       <h4>{ props.produto }</h4>
-      <p>{ props.valor }</p>
+      <p>{ `R$${props.valor}` }</p>
       <LocalOfferIcon className='local-offer-icon' sx={{ color: isSelected ? "#60aa95" :"#2d3f46" }} />
     </section>
   );

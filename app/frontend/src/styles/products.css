@@ -114,9 +114,8 @@ h2{
   padding: 4px 8px;
 }
 
-#detail-valor {
+#detail-valor, .product-card p {
   color: var(--pgray);
-  padding: 0 16px;
 }
 
 .detail-btn-container::before {
