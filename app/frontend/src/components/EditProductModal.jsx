@@ -13,7 +13,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: 500,
   height: 400,
   bgcolor: '#f1f2f0',
   border: '0.5px solid #000',
@@ -59,11 +59,12 @@ const { setProducts } = useContext(AppContext);
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} component="form">
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Editar Produto
           </Typography>
           <TextField
+            sx={{m: 1, paddingBlock: 3}}
             id="standard-basic"
             label="Produto"
             variant="standard"
@@ -71,6 +72,7 @@ const { setProducts } = useContext(AppContext);
             onChange={ onFormChange } 
           />
           <TextField
+            sx={{m: 1, paddingBlock: 3}}
             id="standard-basic"
             label="Valor"
             variant="standard"
@@ -78,12 +80,14 @@ const { setProducts } = useContext(AppContext);
             onChange={ onFormChange } 
           />
           <TextField
+            sx={{m: 1, paddingBlock:2}}
             id="standard-multiline-basic"
             label="Descrição"
             variant="standard"
             name="descricao"
+            fullWidth
             multiline
-            maxRows={4}
+            minRows={3}
             onChange={ onFormChange } 
           />
           <section>
@@ -91,7 +95,8 @@ const { setProducts } = useContext(AppContext);
               variant="contained"
               color="success"
               onClick={ editProduct }
-              sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+              size="large"
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", m: 2 }}
             >
               Editar
             </Button>
@@ -99,7 +104,8 @@ const { setProducts } = useContext(AppContext);
               variant="contained"
               color="success"
               onClick={handleClose}
-              sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
+              size="large"
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", m: 2}}
             >Fechar</Button>
           </section>
         </Box>

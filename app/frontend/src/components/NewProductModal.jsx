@@ -14,7 +14,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: 500,
   height: 400,
   bgcolor: '#f1f2f0',
   border: '0.5px solid #000',
@@ -53,11 +53,12 @@ export default function NewProductModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box component="form" sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Adicionar Produto
           </Typography>
           <TextField
+            sx={{m: 1, paddingBlock:2}}
             id="standard-basic"
             label="Produto"
             variant="standard"
@@ -65,6 +66,7 @@ export default function NewProductModal() {
             onChange={ onFormChange }
           />
           <TextField
+            sx={{m: 1, paddingBlock:2}}
             id="standard-basic"
             label="Valor"
             variant="standard"
@@ -72,28 +74,36 @@ export default function NewProductModal() {
             onChange={ onFormChange }
           />
           <TextField
+            sx={{m: 1, paddingBlock:2}}
             id="standard-basic"
             label="Descrição"
+            fullWidth
+            multiline
+            minRows={3}
             variant="standard"
             name='descricao' 
             onChange={ onFormChange }
           />
-          <Button
-            onClick={ addProduct }
-            sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
-            variant="contained"
-            color="success"
-          >
-            Add
-          </Button>
-          <Button
-            variant="contained"
-            color="success"
-            onClick={ handleClose }
-            sx={{ borderRadius: 0, bgcolor: "#2d3f46", }}
-          >
-            Fechar
-          </Button>
+          <section>
+            <Button
+              onClick={ addProduct }
+              size="large"
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", m: 3 }}
+              variant="contained"
+              color="success"
+            >
+              Add
+            </Button>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={ handleClose }
+              size="large"
+              sx={{ borderRadius: 0, bgcolor: "#2d3f46", m: 2 }}
+            >
+              Fechar
+            </Button>
+          </section>
         </Box>
       </Modal>
     </div>

@@ -9,8 +9,10 @@ function ProductDetails() {
   return (
     <section className="product-details-container">
       <h2>{ detailedProduct.produto }</h2>
-      <p>Valor</p>
-      <p id='detail-valor' >{ `R$${ detailedProduct.valor }` }</p>
+      <div>
+        <p>Valor</p>
+        <p id='detail-valor' >{ `R$${ detailedProduct.valor }` }</p>
+      </div>
       <p>{ detailedProduct.descricao }</p>
       <section className="detail-btn-container">
         <EditProductModal { ...detailedProduct }/>
