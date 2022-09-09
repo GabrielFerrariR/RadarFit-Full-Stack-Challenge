@@ -13,7 +13,7 @@ function ProductDetails() {
       <p id='detail-valor' >{ `R$${ detailedProduct.valor }` }</p>
       <p>{ detailedProduct.descricao }</p>
       <section className="detail-btn-container">
-        <EditProductModal prodId={ detailedProduct.id }/>
+        <EditProductModal { ...detailedProduct }/>
         <LocalOfferIcon sx={{color: "#2d3f46"}} />
       </section>
     </section>

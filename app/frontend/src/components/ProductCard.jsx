@@ -12,7 +12,7 @@ function ProductCard(props) {
   }
   const classType = (isSelected) ? 'product-card selected-card' : 'product-card';
   return (
-    <section key={ props.key } className={ classType } onClick={ showDetails }>
+    <section key={ props.id } className={ classType } onClick={ showDetails }>
       <h4>{ props.produto }</h4>
       <p>{ props.valor }</p>
       <LocalOfferIcon className='local-offer-icon' sx={{ color: isSelected ? "#60aa95" :"#2d3f46" }} />

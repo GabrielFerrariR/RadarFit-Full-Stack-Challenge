@@ -70,6 +70,11 @@ h2{
   margin: 8px;
 }
 
+.product-card h4 {
+  color: var(--sgray);
+  margin-bottom: 0;
+}
+
 
 .local-offer-icon {
   position: absolute;
@@ -82,31 +87,36 @@ h2{
   margin: 8px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: start;
   padding: 4px 0 0 4px;
   border-radius: 2px;
+  position: relative;
 }
 
 .product-details-container p, .product-details-container h1 {
-  padding: 8px 4px;
+  padding: 8px 15px;
+  margin: 0 0 2px 0;
 }
 
 .product-details-container p {
   color: var(--descgray);
+  font-size: 16px;
 }
 
 .detail-btn-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-self: flex-end;
   position: relative;
-  margin-top: 30px;
   height: 100px;
   padding: 4px 8px;
 }
 
 #detail-valor {
   color: var(--pgray);
+  padding: 0 16px;
 }
 
 .detail-btn-container::before {

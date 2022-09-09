@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-export default function EditProductModal({ prodId }) {
+export default function EditProductModal( props ) {
 const { setProducts } = useContext(AppContext);
 
   const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ const { setProducts } = useContext(AppContext);
   };
 
   const editProduct = async () => {
-    await requestUpdate(`/produtos/${ prodId }`, form);
+    await requestUpdate(`/produtos/${ props.id }`, form);
     const data = await requestData('/produtos');
     setProducts(data);
   }
