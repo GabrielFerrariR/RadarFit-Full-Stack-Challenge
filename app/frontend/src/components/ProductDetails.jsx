@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import Stack from '@mui/material/Stack';
 import EditProductModal from "./EditProductModal";
 
 

@@ -1,7 +1,6 @@
 import ProductDetails from './ProductDetails';
 import ProductList from './ProductList';
 import NewProductModal from './NewProductModal';
-import { Container, Box } from '@mui/system';
 import '../styles/products.css'
 
 function ProductsView() {

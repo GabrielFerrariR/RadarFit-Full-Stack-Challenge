@@ -8,7 +8,7 @@
     "compose:up": "(cd app && docker-compose up -d --build)",
     "compose:down": "(cd app && docker-compose down --remove-orphans)",
     "heroku:api:log": "heroku logs --tail --remote heroku",
-    "heroku:app:log": "heroku logs --tail --remote heroku"
+    "heroku:app:log": "heroku logs --tail --remote app"
   },
   "license": "ISC",
   "devDependencies": {
