@@ -6,7 +6,7 @@
   "author": "Gabriel Ferrari",
   "scripts": {
     "start": "cd app/backend/ && npm start",
-    "postinstall": "cd app/backend/ && tsc",
+    "postinstall": "cd app/backend/ && npm install && tsc",
     "compose:up": "(cd app && docker-compose up -d --build)",
     "compose:down": "(cd app && docker-compose down --remove-orphans)",
     "heroku:api:log": "heroku logs --tail --remote heroku",
