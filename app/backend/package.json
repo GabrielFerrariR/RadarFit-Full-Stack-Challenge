@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "API REST de produtos",
-  "main": "./build/server",
+  "main": "./build/server.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node .",
+    "postinstall": "tsc",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "db": "npx sequelize-cli db:create",
     "db:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
@@ -14,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.2",
     "eslint": "^8.23.0",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
