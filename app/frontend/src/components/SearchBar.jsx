@@ -13,7 +13,7 @@ function SearchBar() {
   useEffect(() => {
     requestQueriedData('/produtos/find', { params: { q: query } })
     .then((response) => setProducts(response))
-  }, [query])
+  }, [query, setProducts])
   return(
     <header>
       <section className='search-container'>
